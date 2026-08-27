@@ -2,7 +2,7 @@
 
 **Sneha Jha** · Associate Product Manager assignment · Interview Kickstart
 
-Live prototype: https://sme-scheduler-xxxx.vercel.app · Repo: https://github.com/Sneh075/sme-scheduler
+Live prototype: https://sme-scheduler-eight.vercel.app · Repo: https://github.com/Sneh075/sme-scheduler
 
 ---
 

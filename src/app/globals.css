@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+html, body {
+  background: #FBFBFD;
+  color: #0F1729;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #8A93A6;
+}
+
+.rule-t { border-top: 1px solid #E2E5EC; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+button:focus-visible, [role="button"]:focus-visible, select:focus-visible {
+  outline: 2px solid #33407A;
+  outline-offset: 2px;
+}

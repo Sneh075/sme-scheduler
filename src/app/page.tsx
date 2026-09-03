@@ -39,11 +39,21 @@ export default function Page() {
   }
 
   async function act(payload: any) {
-    const r = await fetch("/api/approve", {
-      method: "POST", headers: { "content-type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    if (r.ok) setRun(await r.json());
+    if (!run) return;
+    setError(null);
+    try {
+      // The draft travels with the request: serverless instances don't share memory,
+      // so the server cannot be relied on to still hold it from the earlier run.
+      const r = await fetch("/api/approve", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ ...payload, run }),
+      });
+      if (!r.ok) throw new Error("Action failed");
+      setRun(await r.json());
+    } catch {
+      setError("That action did not go through. Try again.");
+    }
   }
 
   const sesById = useMemo(
